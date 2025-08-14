@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Kết Quả Cào Dữ Liệu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        h1 {
+            color: #333;
+        }
+        h2 {
+            color: #555;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+        }
+        ul, ol {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Kết Quả Cào Dữ Liệu</h1>
+
+        <h2>URL:</h2>
+        <p><a href="{{ url }}">{{ url }}</a></p>
+
+        <h2>Các Tiêu Đề:</h2>
+        {% if titles %}
+            <ul>
+            {% for title in titles %}
+                <li>{{ title }}</li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>Không tìm thấy tiêu đề nào.</p>
+        {% endif %}
+
+        <h2>Các Đường Link:</h2>
+        {% if links %}
+            <ol>
+            {% for link in links %}
+                <li><a href="{{ link }}">{{ link }}</a></li>
+            {% endfor %}
+            </ol>
+        {% else %}
+            <p>Không tìm thấy đường link nào.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
